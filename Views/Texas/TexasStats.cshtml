@@ -1,4 +1,4 @@
-﻿@model DIS_Assignment4.Models.TexasRootobject
+﻿@model DIS_Assignment4.Models.Rootobject
 
 @{
     ViewData["Title"] = "Texas Stats";
@@ -7,7 +7,7 @@
 
 <p>One of the States we will show stats for</p>
 
-@foreach (DIS_Assignment4.Models.TexasResult result in Model.results)
+@foreach (DIS_Assignment4.Models.Result result in Model.results)
 {
     @("Year: " + result.data_year + "  " + "    Cases Reported:   "+ result.aggravated_assault )
     <br />

@@ -30,7 +30,7 @@ namespace DIS_Assignment4.Controllers
             string CRIME_API_PATH = BASE_URL + "api/data/arrest/states/offense/CO/all/2016/2019?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
             string CrimeData = "";
 
-            ColoradoRootobject results = null;
+            Rootobject results = null;
 
             httpClient.BaseAddress = new Uri(CRIME_API_PATH);
 
@@ -46,7 +46,7 @@ namespace DIS_Assignment4.Controllers
                 if (!CrimeData.Equals(""))
                 {
 
-                    results = JsonConvert.DeserializeObject<ColoradoRootobject>(CrimeData);
+                    results = JsonConvert.DeserializeObject<Rootobject>(CrimeData);
                 }
             }
             catch (Exception e)
