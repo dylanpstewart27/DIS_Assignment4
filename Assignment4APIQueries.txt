@@ -1,0 +1,8 @@
+https://api.usa.gov/crime/fbi/sapi/api/data/arrest/states/offense/CO/all/2016/2019?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+
+https://api.usa.gov/crime/fbi/sapi/api/data/arrest/states/offense/NV/all/2016/2019?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+
+https://api.usa.gov/crime/fbi/sapi/api/data/arrest/states/offense/IA/all/2016/2019?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+
+https://api.usa.gov/crime/fbi/sapi/api/data/arrest/states/offense/TX/all/2016/2019?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv
+
