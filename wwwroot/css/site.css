@@ -35,3 +35,206 @@ body {
         display: none;
     }
 }
+
+
+
+
+
+            /*David's recent addition*/
+
+
+body {
+    background-color: #faebd7;
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+
+/*Set background image*/
+.container {
+    background-position: center;
+    background-size: cover;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+
+/* Position text in the middle */
+.topside {
+    position: absolute;
+    left: 10%;
+    text-align: left;
+    font-size: 25px;
+}
+
+.header {
+    position: center;
+    top: 20%;
+    left: 50%;
+    text-align: center;
+    font-size: 25px;
+}
+/* Position text in the middle */
+.middle {
+    position: absolute;
+    color: green;
+    top: 70%;
+    left: 39%;
+    text-align: center;
+    font-size: 25px;
+}
+
+
+/*the gang*/
+.david {
+    position: absolute;
+    left: 2%;
+    top: 30%;
+    text-align: left;
+    width: 25%;
+    font-size: 20px;
+}
+
+.dylan {
+    position: absolute;
+    left: 38%;
+    top: 30%;
+    text-align: left;
+    width: 25%;
+    font-size: 20px;
+}
+
+.olanrewaju {
+    position: absolute;
+    left: 73%;
+    top: 30%;
+    text-align: left;
+    width: 25%;
+    font-size: 20px;
+}
+
+
+
+/*ERD model*/
+.CrimeModel {
+    top: 230%;
+    text-align: center;
+    position: relative;
+}
+
+
+}
+/*Set circle in unordered list*/
+.middle ul {
+    list-style-type: circle;
+}
+
+    /*Set text inside li tag to left*/
+    .middle ul li {
+        text-align: left !important;
+    }
+
+        /*Set text color for a tag inside middle class and ul>li element*/
+        .middle ul li a {
+            color: gold;
+        }
+
+            /*Change text color and decoration for a tags inside middle class and ul>li element*/
+            .middle ul li a:hover {
+                color: red;
+                text-decoration: none;
+            }
+
+
+
+.table {
+    text-align: center;
+    font-size: 25px;
+    left: 39%;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+
+/* styling */
+body > table {
+    width: 80%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+    table.list {
+        width: 100%;
+    }
+
+td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    background-color: darkgrey;
+}
+
+input[type=text], input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background-color: #ddd;
+    color: #000;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form div.form-action-buttons {
+    text-align: right;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin-right: 4px;
+}
+
+label.validation-error {
+    color: red;
+    margin-left: 5px;
+}
+
+.hide {
+    display: none;
+}
+
+table {
+    border: 1px solid black;
+}
+
+
+
