@@ -7,7 +7,10 @@ namespace DIS_Assignment4.Models
 {
    
 
-    
+    //public class Key
+    //{
+    //    public string keyname { get; set; }
+    //}
     
 
     public class Root

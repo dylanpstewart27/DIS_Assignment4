@@ -7,7 +7,11 @@
 
 @foreach (DIS_Assignment4.Models.Datum result in Model.data)
 {
-    @(result.key+result.data_year + result.value)
+    @(result.key+ result.data_year + result.value)
     <br />
 }
 
+@*@foreach(DIS_Assignment4.Models.Root result in Model.keys)
+{
+    @(result.keys)
+}*@
