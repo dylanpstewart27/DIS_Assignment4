@@ -30,14 +30,48 @@ namespace DIS_Assignment4.Controllers
             return View();
         }
 
-        public IActionResult States()
+        public IActionResult Test()
         {
-            ViewData["Message"] = "Your contact page.";
+            httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Accept.Clear();
+            httpClient.DefaultRequestHeaders.Add("X-Api-Key", API_KEY);
+            httpClient.DefaultRequestHeaders.Accept.Add(
+                new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            return View();
+            string CRIME_API_PATH = BASE_URL + "api/nibrs/aggravated-assault/offender/national/race?API_KEY=iiHnOKfno2Mgkt5AynpvPpUQTEyxE77jo1RU8PIv";
+
+            string CrimeData = "";
+
+            Root results = null;
+
+            httpClient.BaseAddress = new Uri(CRIME_API_PATH);
+
+            try
+            {
+                HttpResponseMessage response = httpClient.GetAsync(CRIME_API_PATH).GetAwaiter().GetResult();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    CrimeData = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+                }
+
+                if (!CrimeData.Equals(""))
+                {
+
+                    results = JsonConvert.DeserializeObject<Root>(CrimeData);
+                }
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
+
+            return View(results);
         }
+    
 
-        public IActionResult Privacy()
+        public IActionResult States()
         {
             return View();
         }
@@ -48,7 +82,7 @@ namespace DIS_Assignment4.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
-        
+
+
     }
 }
