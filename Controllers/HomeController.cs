@@ -6,13 +6,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
 using System.Net.Http;
+using DIS_Assignment4.DataAccess;
+
 
 namespace DIS_Assignment4.Controllers
 {
     public class HomeController : Controller
     {
+       
+
         HttpClient httpClient;
 
         static string BASE_URL = "https://api.usa.gov/crime/fbi/sapi/";

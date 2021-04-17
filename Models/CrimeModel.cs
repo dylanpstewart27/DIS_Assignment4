@@ -28,6 +28,10 @@ namespace DIS_Assignment4.Models
         public object[] precise_data { get; set; }
     }
 
+    public class test
+    {
+        public Key[] keys { get; set; }
+    }
     public class Key
     {
         //public int ID { get; set; }
