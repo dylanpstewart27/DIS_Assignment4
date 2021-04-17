@@ -34,8 +34,6 @@ namespace DIS_Assignment4.Controllers
 
         public IActionResult AboutUs()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 

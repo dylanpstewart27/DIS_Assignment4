@@ -4,6 +4,7 @@ body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #faebd7;
+    height: 100%;
 }
 
 /* Wrapping element */
@@ -118,16 +119,13 @@ p {
 }
 
 
-
-/*ERD model*/
-.CrimeModel {
+.ERD {
     bottom: 0;
-    text-align: center;
-    position: relative;
+    position: fixed;
 }
 
 
-}
+
 /*Set circle in unordered list*/
 .middle ul {
     list-style-type: circle;
