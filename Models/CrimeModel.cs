@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace DIS_Assignment4.Models
 {
@@ -29,8 +30,9 @@ namespace DIS_Assignment4.Models
 
     public class Key
     {
-        public int ID { get; set; }
-        public string race { get; set; }
+        //public int ID { get; set; }
+        [Key]
+        public string key { get; set; }
         public List<Datum> Data { get; set; }
     }
 
