@@ -26,6 +26,12 @@ namespace DIS_Assignment4.Controllers
             return View();
         }
 
+        //Need to put a method in here to get the data to show each different Race key
+        public IActionResult Detail()
+        {
+            return View();
+        }
+
         public IActionResult AboutUs()
         {
             ViewData["Message"] = "Your application description page.";

@@ -121,7 +121,7 @@ p {
 
 /*ERD model*/
 .CrimeModel {
-    top: 230%;
+    bottom: 0;
     text-align: center;
     position: relative;
 }

@@ -6,13 +6,19 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DIS_Assignment4.Models
 {
-   
+
 
     //public class Key
     //{
     //    public string keyname { get; set; }
     //}
-    
+    public class Key
+    {
+        //public int ID { get; set; }
+        [Key]
+        public string key { get; set; }
+        public List<Datum> Data { get; set; }
+    }
 
     public class Root
     {
@@ -30,15 +36,9 @@ namespace DIS_Assignment4.Models
 
     public class test
     {
-        public Key[] keys { get; set; }
+        public List<Key> testing { get; set; }
     }
-    public class Key
-    {
-        //public int ID { get; set; }
-        [Key]
-        public string key { get; set; }
-        public List<Datum> Data { get; set; }
-    }
+   
 
     public class Datum
     {
