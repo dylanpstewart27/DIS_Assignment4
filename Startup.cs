@@ -9,8 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
-//using DIS_Assignment4.DataAccess;
+using DIS_Assignment4.DataAccess;
 using Microsoft.EntityFrameworkCore;
 
 namespace DIS_Assignment4
@@ -34,7 +33,7 @@ namespace DIS_Assignment4
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:DIS4:ConnectionString"]));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:DIS4:ConnectionString"]));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -44,8 +43,8 @@ namespace DIS_Assignment4
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-               // var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-               // context.Database.EnsureCreated();
+                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.EnsureCreated();
 
                 if (env.IsDevelopment())
                 {
