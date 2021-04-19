@@ -1,4 +1,6 @@
-CREATE DATABSE crimes;
+INSTRUCTIONS
+Download MySQL (Maria DB) here: https://mariadb.org/download/
+
 
 use crimes;
 
