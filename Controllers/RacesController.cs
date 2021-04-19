@@ -37,5 +37,19 @@ namespace DIS_Assignment4.Controllers
             ViewData["RaceName"] = race.race;
             return View(await crimesManager.GetCrimeByRaceId(raceId));
         }
+
+        [HttpPut()]
+        public async Task<IActionResult> UpdateRace([FromRoute] int raceId)
+        {
+            await crimesManager.UpdateByRaceId(raceId);
+            return Ok();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteRace([FromRoute] int raceId)
+        {
+            await crimesManager.DeleteRaceById(raceId);
+            return Ok();
+        }
     }
 }
