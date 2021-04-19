@@ -11,6 +11,5 @@ namespace DIS_Assignment4.DataAccess
         public DbSet<Datum> Datums { get; set; }
 
 
-
     }
 }
