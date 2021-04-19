@@ -21,7 +21,7 @@ namespace DIS_Assignment4.Models
         public string title { get; set; }
         public string short_title { get; set; }
         
-       public object ui_restriction { get; set; }
+        public object ui_restriction { get; set; }
         public string[] keys { get; set; }
         public Datum[] data { get; set; }
         public object[] precise_data { get; set; }
@@ -41,6 +41,19 @@ namespace DIS_Assignment4.Models
         public int data_year { get; set; }
         public int month_num { get; set; }
         public string key { get; set; }
+    }
+
+    public class CrimeData
+    {
+        public int Key { get; set; }
+
+        public int Total { get; set; }
+        
+        public int Year { get; set; }
+
+        public int Month { get; set; }
+
+        public string Race { get; set; }
     }
 
 
