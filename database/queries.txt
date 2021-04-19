@@ -1,3 +1,5 @@
+CREATE DATABSE crimes;
+
 use crimes;
 
 CREATE TABLE IF NOT EXISTS Races (
