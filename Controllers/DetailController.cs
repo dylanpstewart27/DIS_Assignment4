@@ -24,7 +24,10 @@ namespace DIS_Assignment4.Controllers
 
         public IActionResult Detail()
         {
-            return View();
+            var x = dbContext.Keys
+                .OrderBy(c => c.key);
+
+            return View(x);
         }
     }
 }

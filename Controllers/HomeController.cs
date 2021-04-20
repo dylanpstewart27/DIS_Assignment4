@@ -14,7 +14,7 @@ namespace DIS_Assignment4.Controllers
 {
     public class HomeController : Controller
     {
-       
+
 
         HttpClient httpClient;
 
@@ -76,7 +76,7 @@ namespace DIS_Assignment4.Controllers
 
             return View(results);
         }
-    
+
 
         public IActionResult States()
         {
@@ -93,3 +93,6 @@ namespace DIS_Assignment4.Controllers
 
     }
 }
+
+
+
