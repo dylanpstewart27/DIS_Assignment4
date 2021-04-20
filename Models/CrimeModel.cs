@@ -20,6 +20,13 @@ namespace DIS_Assignment4.Models
         public List<Datum> Data { get; set; }
     }
 
+    public class Year
+    {
+        [Key]
+        public int year { get; set; }
+        public List<Datum> Data { get; set; }
+    }
+
     public class Root
     {
         public string ui_type { get; set; }

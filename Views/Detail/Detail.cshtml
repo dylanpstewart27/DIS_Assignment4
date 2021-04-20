@@ -1,1 +1,16 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>One of the States we will show stats for</p>
+
+@model IEnumerable<DIS_Assignment4.Models.Key>
+
+@foreach (DIS_Assignment4.Models.Key result in Model)
+{
+    @(result.key)
+    <br />
+}
+

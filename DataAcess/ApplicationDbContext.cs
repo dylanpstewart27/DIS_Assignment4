@@ -10,6 +10,7 @@ namespace DIS_Assignment4.DataAccess
         public DbSet<Key> Keys { get; set; }
         public DbSet<Datum> Datums { get; set; }
 
+        public DbSet<Year> Years { get; set; }
 
     }
 }

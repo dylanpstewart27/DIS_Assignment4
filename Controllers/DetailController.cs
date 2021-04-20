@@ -24,10 +24,19 @@ namespace DIS_Assignment4.Controllers
 
         public IActionResult Detail()
         {
-            var x = dbContext.Keys
-                .OrderBy(c => c.key);
+            List<Key> Data = new List<Key>();
 
-            return View(x);
+            {
+                foreach (var y in dbContext.Keys.OrderBy(k => k.key))
+                {
+
+
+                    Data.Add(y);
+
+                }
+
+                return View(Data);
+            }
         }
     }
 }
