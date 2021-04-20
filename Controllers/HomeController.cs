@@ -6,13 +6,16 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-
 using System.Net.Http;
+using DIS_Assignment4.DataAccess;
+
 
 namespace DIS_Assignment4.Controllers
 {
     public class HomeController : Controller
     {
+       
+
         HttpClient httpClient;
 
         static string BASE_URL = "https://api.usa.gov/crime/fbi/sapi/";
@@ -23,10 +26,14 @@ namespace DIS_Assignment4.Controllers
             return View();
         }
 
+        //Need to put a method in here to get the data to show each different Race key
+        public IActionResult Detail()
+        {
+            return View();
+        }
+
         public IActionResult AboutUs()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 

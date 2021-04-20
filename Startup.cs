@@ -11,7 +11,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using DIS_Assignment4.DataAccess;
 using Microsoft.EntityFrameworkCore;
-using DIS_Assignment4.DataAcess;
 
 namespace DIS_Assignment4
 {
@@ -34,10 +33,6 @@ namespace DIS_Assignment4
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            //MySql
-            services.AddTransient<CrimesDatabase>(_ => new CrimesDatabase("server=localhost; database=Crimes; uid=root; pwd=123;"));
-            services.AddTransient<Manager>();
-
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:DIS4:ConnectionString"]));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
@@ -48,8 +43,8 @@ namespace DIS_Assignment4
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                //var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
-                //context.Database.EnsureCreated();
+                var context = serviceScope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                context.Database.EnsureCreated();
 
                 if (env.IsDevelopment())
                 {
@@ -61,7 +56,7 @@ namespace DIS_Assignment4
                     app.UseHsts();
                 }
 
-                //app.UseHttpsRedirection();
+                app.UseHttpsRedirection();
                 app.UseStaticFiles();
                 app.UseCookiePolicy();
 

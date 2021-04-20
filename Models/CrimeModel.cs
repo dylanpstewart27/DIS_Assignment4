@@ -2,16 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace DIS_Assignment4.Models
 {
-   
+
 
     //public class Key
     //{
     //    public string keyname { get; set; }
     //}
-    
+    public class Key
+    {
+        //public int ID { get; set; }
+        [Key]
+        public string key { get; set; }
+        public List<Datum> Data { get; set; }
+    }
 
     public class Root
     {
@@ -21,18 +28,17 @@ namespace DIS_Assignment4.Models
         public string title { get; set; }
         public string short_title { get; set; }
         
-        public object ui_restriction { get; set; }
+       public object ui_restriction { get; set; }
         public string[] keys { get; set; }
         public Datum[] data { get; set; }
         public object[] precise_data { get; set; }
     }
 
-    public class Key
+    public class test
     {
-        public int ID { get; set; }
-        public string race { get; set; }
-        public List<Datum> Data { get; set; }
+        public List<Key> testing { get; set; }
     }
+   
 
     public class Datum
     {
@@ -41,19 +47,6 @@ namespace DIS_Assignment4.Models
         public int data_year { get; set; }
         public int month_num { get; set; }
         public string key { get; set; }
-    }
-
-    public class CrimeData
-    {
-        public int Key { get; set; }
-
-        public int Total { get; set; }
-        
-        public int Year { get; set; }
-
-        public int Month { get; set; }
-
-        public string Race { get; set; }
     }
 
 

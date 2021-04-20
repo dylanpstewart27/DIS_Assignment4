@@ -81,15 +81,5 @@ namespace DIS_Assignment4
             return ret;
         }
 
-        public Task UpdateByRaceId(int raceId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task DeleteRaceById(int raceId)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }
