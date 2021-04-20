@@ -1,3 +1,4 @@
+
 use crimes;
 
 CREATE DATABASE IF NOT EXISTS Crimes;
