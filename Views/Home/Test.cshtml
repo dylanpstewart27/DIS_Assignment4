@@ -10,7 +10,7 @@
 
 @foreach (DIS_Assignment4.Models.Datum result in Model.data)
 {
-    @(result.key+ result.data_year + result.value)
+    @(result.key+" " +result.data_year + " " + result.value)
     <br />
 }
 
@@ -22,7 +22,7 @@
 
 
 
-@model ChartModel
+@*@model ChartModel
 
 @{
     Layout = null;
@@ -70,14 +70,14 @@
       }
     });
 
-    </script>
+    </script>*@
 
 
 
 
-</body>
 
-</html>
+
+
 
 
 

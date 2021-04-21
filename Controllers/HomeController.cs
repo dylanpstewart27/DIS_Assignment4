@@ -14,7 +14,12 @@ namespace DIS_Assignment4.Controllers
 {
     public class HomeController : Controller
     {
+        public ApplicationDbContext dbContext;
 
+        public HomeController(ApplicationDbContext context)
+        {
+            dbContext = context;
+        }
 
         HttpClient httpClient;
 
@@ -66,6 +71,12 @@ namespace DIS_Assignment4.Controllers
                 {
 
                     results = JsonConvert.DeserializeObject<Root>(CrimeData);
+                    //Database 
+                    foreach (Datum x in results.data)
+                    {
+                        dbContext.Datums.Add(x);
+                    }
+                    dbContext.SaveChangesAsync();
                 }
             }
             catch (Exception e)
@@ -73,6 +84,8 @@ namespace DIS_Assignment4.Controllers
 
                 Console.WriteLine(e.Message);
             }
+
+           
 
             return View(results);
         }

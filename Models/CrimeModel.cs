@@ -41,13 +41,6 @@ namespace DIS_Assignment4.Models
         public object[] precise_data { get; set; }
     }
 
-    
-    public class test
-    {
-        public List<Key> testing { get; set; }
-    }
-   
-
     public class Datum
     {
         public int ID { get; set; }
