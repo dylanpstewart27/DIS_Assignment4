@@ -41,6 +41,7 @@ namespace DIS_Assignment4.Models
         public object[] precise_data { get; set; }
     }
 
+    
     public class test
     {
         public List<Key> testing { get; set; }
@@ -57,4 +58,14 @@ namespace DIS_Assignment4.Models
     }
 
 
+     public class ChartModel
+    {
+        public string ChartType { get; set; }
+        public string Labels { get; set; }
+        public string Colors { get; set; }
+        public string Data { get; set; }
+        public string Title { get; set; }
+    }
+
+        
 }
