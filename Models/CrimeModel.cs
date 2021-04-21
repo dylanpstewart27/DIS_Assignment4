@@ -21,7 +21,7 @@ namespace DIS_Assignment4.Models
 
     public class Year
     {
-        [Key]public int year { get; set; }
+        [Key]public int data_year { get; set; }
         public List<Datum> Data { get; set; }
     }
 

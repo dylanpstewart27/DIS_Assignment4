@@ -74,11 +74,11 @@ namespace DIS_Assignment4.Controllers
                     //Database 
                    
                 }
-                foreach (Datum x in results.data)
-                {
-                    dbContext.Datums.Add(x);
-                }
-                dbContext.SaveChanges();
+                //foreach (Datum x in results.data)
+                //{
+                //    dbContext.Datums.Add(x);
+                //}
+                //dbContext.SaveChanges();
             }
             catch (Exception e)
             {
@@ -107,63 +107,63 @@ namespace DIS_Assignment4.Controllers
             Key6.key = "Black or African American";
 
             Year year1 = new Year();
-            year1.year = 1991;
+            year1.data_year = 1991;
             Year year2 = new Year();
-            year2.year = 1992;
+            year2.data_year = 1992;
             Year year3 = new Year();
-            year3.year = 1993;
+            year3.data_year = 1993;
             Year year4 = new Year();
-            year4.year = 1994;
+            year4.data_year = 1994;
             Year year5 = new Year();
-            year5.year = 1995;
+            year5.data_year = 1995;
             Year year6 = new Year();
-            year6.year = 1996;
+            year6.data_year = 1996;
             Year year7 = new Year();
-            year7.year = 1997;
+            year7.data_year = 1997;
             Year year8 = new Year();
-            year8.year = 1998;
+            year8.data_year = 1998;
             Year year9 = new Year();
-            year9.year = 1999;
+            year9.data_year = 1999;
             Year year10 = new Year();
-            year10.year = 2000;
+            year10.data_year = 2000;
             Year year11 = new Year();
-            year11.year = 2001;
+            year11.data_year = 2001;
             Year year12 = new Year();
-            year12.year = 2002;
+            year12.data_year = 2002;
             Year year13 = new Year();
-            year13.year = 2003;
+            year13.data_year = 2003;
             Year year14 = new Year();
-            year14.year = 2004;
+            year14.data_year = 2004;
             Year year15 = new Year();
-            year15.year = 2005;
+            year15.data_year = 2005;
             Year year16 = new Year();
-            year16.year = 2006;
+            year16.data_year = 2006;
             Year year17 = new Year();
-            year17.year = 2007;
+            year17.data_year = 2007;
             Year year18 = new Year();
-            year18.year = 2008;
+            year18.data_year = 2008;
             Year year19 = new Year();
-            year19.year = 2009;
+            year19.data_year = 2009;
             Year year20 = new Year();
-            year20.year = 2010;
+            year20.data_year = 2010;
             Year year21 = new Year();
-            year21.year = 2011;
+            year21.data_year = 2011;
             Year year22 = new Year();
-            year22.year = 2012;
+            year22.data_year = 2012;
             Year year23 = new Year();
-            year23.year = 2013;
+            year23.data_year = 2013;
             Year year24 = new Year();
-            year24.year = 2014;
+            year24.data_year = 2014;
             Year year25 = new Year();
-            year25.year = 2015;
+            year25.data_year = 2015;
             Year year26 = new Year();
-            year26.year = 2016;
+            year26.data_year = 2016;
             Year year27 = new Year();
-            year27.year = 2017;
+            year27.data_year = 2017;
             Year year28 = new Year();
-            year28.year = 2018;
+            year28.data_year = 2018;
             Year year29 = new Year();
-            year29.year = 2019;
+            year29.data_year = 2019;
 
             dbContext.Years.Add(year1);
             dbContext.Years.Add(year2);
