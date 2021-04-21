@@ -89,7 +89,52 @@ namespace DIS_Assignment4.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
+        
+        
+        
+        //David's build of chart structure
 
+
+        public ViewResult Chart()
+        {
+            string[] ChartLabels = new string[] { "year1", "year2", "year3", "year4", "year5" }; // (X-axis= time) this shouldnt be hard coded, but be a collection of objects
+            string[] ChartColors = new string[] { "#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850" }; 
+            int[] ChartData = new int[] { 2478, 5267, 734, 784, 433 }; // (Y-axis= # of crimes) this shouldnt be hard coded, but be a collection of objects
+
+
+
+            ChartModel Model = new ChartModel  //this is how we put all data from above (Public ViewResult Chart) together as one object to be rendered
+            {
+                ChartType = "bar",
+                Labels = String.Join(",", ChartLabels.Select(d => "'" + d + "'")),
+                Colors = String.Join(",", ChartColors.Select(d => "\"" + d + "\"")),
+                Data = String.Join(",", ChartData.Select(d => d)),
+                Title = "Crime arrests per year"  //couldve come from database, or argument of method
+            };
+
+            return View(Model);
+
+        }
+
+
+
+
+
+        public ViewResult DemoAjax()
+        {
+            return View();
+        }
+
+        public JsonResult AjaxResult()
+        {
+            Task.WaitAll(Task.Delay(1000));
+
+            return Json("Test");
+        }
+        
+        
+        
+        
 
     }
 }
