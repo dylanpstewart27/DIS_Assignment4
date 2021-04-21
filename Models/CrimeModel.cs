@@ -15,15 +15,13 @@ namespace DIS_Assignment4.Models
     public class Key
     {
         //public int ID { get; set; }
-        [Key]
-        public string key { get; set; }
+        [Key]public string key { get; set; }
         public List<Datum> Data { get; set; }
     }
 
     public class Year
     {
-        [Key]
-        public int year { get; set; }
+        [Key]public int year { get; set; }
         public List<Datum> Data { get; set; }
     }
 
@@ -39,6 +37,7 @@ namespace DIS_Assignment4.Models
         public string[] keys { get; set; }
         public Datum[] data { get; set; }
         public object[] precise_data { get; set; }
+        
     }
 
     public class Datum
