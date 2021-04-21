@@ -22,7 +22,7 @@ namespace DIS_Assignment4.Controllers
             dbContext = context;
         }
 
-        public IActionResult Master()
+        public IActionResult Detail()
         {
             List<Key> Data = new List<Key>();
 
@@ -37,12 +37,6 @@ namespace DIS_Assignment4.Controllers
 
                 return View(Data);
             }
-        }
-
-        public IActionResult Detail(string key)
-        {
-
-            return View();
         }
     }
 }
