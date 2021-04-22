@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@model IEnumerable<DIS_Assignment4.Models.Datum>
+
+@foreach (DIS_Assignment4.Models.Datum result in Model)
+{
+    @(result.key+" " +result.data_year + " " + result.value)
+    <br />
+}

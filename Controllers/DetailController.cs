@@ -38,5 +38,33 @@ namespace DIS_Assignment4.Controllers
                 return View(Data);
             }
         }
+
+        public IActionResult Details(string key)
+        {
+            
+            List<Datum> list = new List<Datum>();
+           
+
+            //List<SectorSourceAnnual> list = new List<SectorSourceAnnual>();
+            //var sectorSourceData = _context.AnnualEnergyConsumption.Where(t => t.sector.SectorName == sector & t.energysource.SourceName == source).OrderByDescending(y => y.Year);
+            //foreach (AnnualEnergyConsumption dbRow in sectorSourceData)
+            //{
+            //    SectorSourceAnnual listRow = new SectorSourceAnnual();
+            //    listRow.Year = dbRow.Year;
+            //    listRow.Value = dbRow.Value;
+            //    list.Add(listRow);
+            //}
+            //details.data = list;
+            //return View(details);
+
+            //var query = dbContext.Datums.Where(d => d.key == key);
+            foreach(Datum x in dbContext.Datums.Where(d => d.key == key))
+            {
+                list.Add(x);
+            }
+            
+
+            return View(list);
+        }
     }
 }

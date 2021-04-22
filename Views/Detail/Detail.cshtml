@@ -10,7 +10,11 @@
 
 @foreach (DIS_Assignment4.Models.Key result in Model)
 {
-    @(result.key)
+    @(result.key )
+    <form asp-controller="Detail" asp-action="Details" method="post">
+        <input type="hidden" name="key" value="@result.key" />
+        <button type="submit" class="btn btn-primary btn-sm">Details</button>
+    </form>
     <br />
 }
 
