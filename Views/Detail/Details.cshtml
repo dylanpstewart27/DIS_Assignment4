@@ -1,20 +1,43 @@
 ﻿@{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Race Details";
 }
 
 <h2>@ViewData["Title"]</h2>
 
 @model IEnumerable<DIS_Assignment4.Models.Datum>
-
+<h3></h3>
+<table>
+    <tr>
+        <th>Race</th>
+        <th>Year</th>
+        <th>Amount of Arrests</th>
+        <th>Delete Record</th>
+        <th>Update Record</th>
+    </tr>
 @foreach (DIS_Assignment4.Models.Datum result in Model)
-{
-    @(result.key+" " +result.data_year + " " + result.value)
-    <form class="form-group" asp-controller="Detail" asp-action="Delete" method="post">
-        <input type="hidden" name="key" value="@result.key" />
-        <input type="hidden" name="data_year" value="@result.data_year" />
-        <input type="hidden" name="value" value="@result.value" />
+{<tr>
+    <td>
+        @(result.key)
+    </td>
+    <td>
+        @(result.data_year)
+    </td>
+    <td>
+        @(result.value)
+    </td>
+
+
+    <td>
+        <form class="form-group" asp-controller="Detail" asp-action="Delete" method="post">
+            <input type="hidden" name="key" value="@result.key" />
+            <input type="hidden" name="data_year" value="@result.data_year" />
+            <input type="hidden" name="value" value="@result.value" />
+
+            <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+        </form>
+    </td>
+</tr>
         
-        <button type="submit" class="btn btn-primary btn-sm">Delete</button>
-    </form>
-    <br />
+  
 }
+</table>
