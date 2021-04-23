@@ -9,5 +9,12 @@
 @foreach (DIS_Assignment4.Models.Datum result in Model)
 {
     @(result.key+" " +result.data_year + " " + result.value)
+    <form class="form-group" asp-controller="Detail" asp-action="Delete" method="post">
+        <input type="hidden" name="key" value="@result.key" />
+        <input type="hidden" name="data_year" value="@result.data_year" />
+        <input type="hidden" name="value" value="@result.value" />
+        
+        <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+    </form>
     <br />
 }

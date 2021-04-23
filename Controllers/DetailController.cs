@@ -58,13 +58,26 @@ namespace DIS_Assignment4.Controllers
             //return View(details);
 
             //var query = dbContext.Datums.Where(d => d.key == key);
-            foreach(Datum x in dbContext.Datums.Where(d => d.key == key))
+            foreach(Datum x in dbContext.Datums.Where(d => d.key == key).OrderByDescending(d => d.data_year))
             {
                 list.Add(x);
             }
             
 
             return View(list);
+        }
+
+        public IActionResult Delete(string key, int data_year, int value)
+        {
+            Datum deletion = dbContext.Datums
+                .Where(d => d.key == key & d.data_year == data_year & d.value == value)
+                .First();
+            //_context.AnnualEnergyConsumption.Remove(DelRecord);
+            //await _context.SaveChangesAsync();
+            //return View(DelRecord);
+            dbContext.Datums.Remove(deletion);
+            dbContext.SaveChanges();
+            return View();
         }
     }
 }
