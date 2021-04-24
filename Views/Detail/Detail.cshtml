@@ -1,20 +1,34 @@
 ﻿@{
-    ViewData["Title"] = "Detail";
+    ViewData["Title"] = "Races";
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<p>One of the States we will show stats for</p>
+<h3>Here is the list of each race the NIBRS keeps statistics for</h3>
+<h4>Click "Details" to get a more in depth look at the years number of arrests</h4>
+<br />
 
 @model IEnumerable<DIS_Assignment4.Models.Key>
+    <table>
+        <tr>
+            <td><b>Race Name</b></td>
+            <td><b>Race Detail</b></td>
+        </tr>
+        
+            @foreach (DIS_Assignment4.Models.Key result in Model)
+            {<tr>
+    <td> @(result.key )</td>
+    <td>
+        <form asp-controller="Detail" asp-action="Details" method="post">
+            <input type="hidden" name="key" value="@result.key" />
+            <button type="submit" class="btn btn-primary btn-sm">Details</button>
+        </form>
+    </td>
+</tr>
+            }
+    </table>
 
-@foreach (DIS_Assignment4.Models.Key result in Model)
-{
-    @(result.key )
-    <form asp-controller="Detail" asp-action="Details" method="post">
-        <input type="hidden" name="key" value="@result.key" />
-        <button type="submit" class="btn btn-primary btn-sm">Details</button>
-    </form>
-    <br />
-}
+
+        <br />
+    
 
