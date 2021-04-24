@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using System.Net.Http;
 using DIS_Assignment4.DataAccess;
-
+using System.Data;
 
 namespace DIS_Assignment4.Controllers
 {
@@ -52,6 +52,37 @@ namespace DIS_Assignment4.Controllers
 
 
             return View(list);
+        }
+
+        public IActionResult Chart(string key)
+        {
+            ViewData["key"] = key;
+            List<int> year = new List<int>();
+            List<int> value = new List<int>();
+            Datum list = new Datum();
+            DataTable dt = new DataTable();
+
+
+            foreach (Datum x in dbContext.Datums.Where(d => d.key == key).OrderByDescending(d => d.data_year))
+            {
+                year.Add(x.data_year);
+                value.Add(x.value);
+            }
+
+            var yearArray = year.ToArray();
+            var valueArray = value.ToArray();
+
+            Chart Model = new Chart
+            {
+
+                data_year = String.Join(",", yearArray.Select(d => d)),
+                
+                value = String.Join(",", valueArray.Select(d => d))
+                
+            };
+
+
+            return View(Model);
         }
 
         [HttpGet("/Detail/Create/{key}")]

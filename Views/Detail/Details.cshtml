@@ -6,10 +6,12 @@
 <h2>@ViewData["Title"]</h2>
 
 @model IEnumerable<DIS_Assignment4.Models.Datum>
-<h3 align ="Center">
-To Create a New Record, Click <a href="/Detail/Create/@(ViewData["key"])" class="btn btn-primary btn-md">Here</a>
-    </h3>
-<br /><br />
+<h3 align="Center">
+    To Create a New Record, Click <a href="/Detail/Create/@(ViewData["key"])" class="btn btn-primary btn-md">Here</a>
+</h3>
+<canvas id="chart" style="height: 250px !important;"></canvas>
+<br />
+<br />
 <table align="center">
     <tr>
         <th>Race</th>
@@ -18,38 +20,41 @@ To Create a New Record, Click <a href="/Detail/Create/@(ViewData["key"])" class=
         <th>Delete Record</th>
         <th>Update Record</th>
     </tr>
-@foreach (DIS_Assignment4.Models.Datum result in Model)
-{<tr>
-    <td>
-        @(result.key)
-    </td>
-    <td>
-        @(result.data_year)
-    </td>
-    <td>
-        @(result.value)
-    </td>
+    @foreach (DIS_Assignment4.Models.Datum result in Model)
+    {
+        <tr>
+            <td>
+                @(result.key)
+            </td>
+            <td>
+                @(result.data_year)
+            </td>
+            <td>
+                @(result.value)
+            </td>
 
 
-    <td>
-        <form class="form-group" asp-controller="Detail" asp-action="Delete" method="post">
-            <input type="hidden" name="key" value="@result.key" />
-            <input type="hidden" name="data_year" value="@result.data_year" />
-            <input type="hidden" name="value" value="@result.value" />
+            <td>
+                <form class="form-group" asp-controller="Detail" asp-action="Delete" method="post">
+                    <input type="hidden" name="key" value="@result.key" />
+                    <input type="hidden" name="data_year" value="@result.data_year" />
+                    <input type="hidden" name="value" value="@result.value" />
 
-            <button type="submit" class="btn btn-primary btn-sm">Delete</button>
-        </form>
-    </td>
-    <td><form class="form-group" asp-controller="Detail" asp-action="Edit" method="post">
-            <input type="hidden" name="ID" value="@result.ID" />
-            <input type="hidden" name="key" value="@result.key" />
-            <input type="hidden" name="data_year" value="@result.data_year" />
-            <input type="hidden" name="value" value="@result.value" />
+                    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+                </form>
+            </td>
+            <td>
+                <form class="form-group" asp-controller="Detail" asp-action="Edit" method="post">
+                    <input type="hidden" name="ID" value="@result.ID" />
+                    <input type="hidden" name="key" value="@result.key" />
+                    <input type="hidden" name="data_year" value="@result.data_year" />
+                    <input type="hidden" name="value" value="@result.value" />
 
-            <button type="submit" class="btn btn-sm">Update</button>
-        </form></td>
-</tr>
-        
-  
-}
+                    <button type="submit" class="btn btn-sm">Update</button>
+                </form>
+            </td>
+        </tr>
+
+
+    }
 </table>

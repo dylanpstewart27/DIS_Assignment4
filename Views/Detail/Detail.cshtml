@@ -29,15 +29,21 @@
 
             @foreach (DIS_Assignment4.Models.Key result in Model)
             {
-                <tr>
-                    <td><h4> @(result.key )</h4></td>
-                    <td>
-                        <form asp-controller="Detail" asp-action="Details" method="post">
-                            <input type="hidden" name="key" value="@result.key" />
-                            <button type="submit" class="btn btn-primary btn-sm">Details</button>
-                        </form>
-                    </td>
-                </tr>
+        <tr>
+            <td><h4> @(result.key )</h4></td>
+            <td>
+                <form asp-controller="Detail" asp-action="Details" method="post">
+                    <input type="hidden" name="key" value="@result.key" />
+                    <button type="submit" class="btn btn-primary btn-sm">Details</button>
+                </form>
+            </td>
+            <td>
+                <form asp-controller="Detail" asp-action="Chart" method="post">
+                    <input type="hidden" name="key" value="@result.key" />
+                    <button type="submit" class="btn btn-primary btn-sm">Chart</button>
+                </form>
+            </td>
+        </tr>
             }
         </table>
 

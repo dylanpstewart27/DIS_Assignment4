@@ -1,0 +1,47 @@
+﻿@model Chart
+
+@{
+    ViewData["Title"] = "Chart";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chart.js examples</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+</head>
+<body>
+    <h1> Bar chart example</h1>
+
+    <canvas id="barchartexample" width="800" height="450"></canvas>
+
+    <script>
+    new Chart(document.getElementById("barchartexample"), {
+      type: 'line',
+      data: {
+        labels: [@Html.Raw(@Model.data_year)],
+        datasets: [
+          {
+            label: "Population (millions)",
+                backgroundColor: 'rgba(0, 57, 42, 0.1)',
+            data: [@Model.value]
+          }
+        ]
+      },
+      options: {
+        
+        title: {
+          display: true,
+          text: 'Title'
+        }
+      }
+    });
+    </script>
+</body>
+</html>
+© 2021 GitHub, Inc.

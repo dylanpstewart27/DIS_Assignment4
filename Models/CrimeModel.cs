@@ -49,15 +49,12 @@ namespace DIS_Assignment4.Models
         public string key { get; set; }
     }
 
-
-     public class ChartModel
+    public class Chart
     {
-        public string ChartType { get; set; }
-        public string Labels { get; set; }
-        public string Colors { get; set; }
-        public string Data { get; set; }
-        public string Title { get; set; }
+        public string data_year { get; set; }
+        public string value { get; set; }
     }
+    
 
         
 }
