@@ -6,6 +6,8 @@
 
 @model IEnumerable<DIS_Assignment4.Models.Datum>
 <h3></h3>
+<a href="/Detail/Create/@(ViewData["key"])" class="btn btn-primary btn-md">Create</a>
+<br /><br />
 <table>
     <tr>
         <th>Race</th>
@@ -36,6 +38,14 @@
             <button type="submit" class="btn btn-primary btn-sm">Delete</button>
         </form>
     </td>
+    <td><form class="form-group" asp-controller="Detail" asp-action="Edit" method="post">
+            <input type="hidden" name="ID" value="@result.ID" />
+            <input type="hidden" name="key" value="@result.key" />
+            <input type="hidden" name="data_year" value="@result.data_year" />
+            <input type="hidden" name="value" value="@result.value" />
+
+            <button type="submit" class="btn btn-sm">Update</button>
+        </form></td>
 </tr>
         
   

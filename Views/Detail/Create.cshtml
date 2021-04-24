@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+
+<p>Create record for race: <b>@(ViewData["key"])</b></p>
+
+<form asp-controller="Detail" asp-action="CreateDatum" method="post">
+        <input type="hidden" name="key" value="@ViewData["key"]" />
+        <input type="text" name="data_year" value="" placeholder="Year" />
+        <input type="text" name="data_month" value="" placeholder="Month" />
+        <input type="text" name="value" value="" placeholder="Value" />
+
+        <button type="submit" class="btn btn-primary btn-sm">Create</button>
+    </form>
+    <br />
