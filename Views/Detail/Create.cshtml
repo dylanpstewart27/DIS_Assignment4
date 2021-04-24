@@ -9,8 +9,9 @@
 
 <form asp-controller="Detail" asp-action="CreateDatum" method="post">
         <input type="hidden" name="key" value="@ViewData["key"]" />
+    <p>Data Year</p>
         <input type="text" name="data_year" value="" placeholder="Year" />
-        <input type="text" name="data_month" value="" placeholder="Month" />
+       <p>Amount of Arrests</p>
         <input type="text" name="value" value="" placeholder="Amount of Arrests" />
 
         <button type="submit" class="btn btn-primary btn-sm">Create</button>

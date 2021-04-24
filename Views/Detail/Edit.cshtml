@@ -1,18 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "Detail";
+    ViewData["Title"] = "Edit Record";
 }
 
 <h2>@ViewData["Title"]</h2>
 
-<p>One of the States we will show stats for</p>
+<p></p>
 
 @model IEnumerable<DIS_Assignment4.Models.Datum>
+
+
+
+<p>Upade Record for: <b>@(ViewData["key"])</b>  <b>@(ViewData["data_year"])</b>  <b>@(ViewData["value"])</b></p>
+
 
 @foreach (DIS_Assignment4.Models.Datum result in Model)
 {
     <form asp-controller="Detail" asp-action="Update" method="post">
         <input type="hidden" name="ID" value="@result.ID" />
-        <input type="text" name="data_year" value="@result.data_year" placeholder="Year" />
+        <p>Data Year</p>
+        <input type="text" name="data_year" value="@result.data_year" placeholder="Year" readonly />
+        <p>Amount of Arrests</p>
         <input type="text" name="value" value="@result.value" placeholder="Amount of Arrests" />
 
         <button type="submit" class="btn btn-primary btn-sm">Update</button>

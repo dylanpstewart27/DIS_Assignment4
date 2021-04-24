@@ -45,20 +45,6 @@ namespace DIS_Assignment4.Controllers
             List<Datum> list = new List<Datum>();
 
 
-            //List<SectorSourceAnnual> list = new List<SectorSourceAnnual>();
-            //var sectorSourceData = _context.AnnualEnergyConsumption.Where(t => t.sector.SectorName == sector & t.energysource.SourceName == source).OrderByDescending(y => y.Year);
-            //foreach (AnnualEnergyConsumption dbRow in sectorSourceData)
-            //{
-            //    SectorSourceAnnual listRow = new SectorSourceAnnual();
-            //    listRow.Year = dbRow.Year;
-            //    listRow.Value = dbRow.Value;
-            //    list.Add(listRow);
-            //}
-            //details.data = list;
-            //return View(details);
-
-            //var query = dbContext.Datums.Where(d => d.key == key);
-
             foreach (Datum x in dbContext.Datums.Where(d => d.key == key).OrderByDescending(d => d.data_year))
             {
                 list.Add(x);
@@ -89,20 +75,24 @@ namespace DIS_Assignment4.Controllers
             return RedirectPreserveMethod("Detail/Details");
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int id, string key, int data_year, int value)
         {
+            ViewData["key"] = key;
+            ViewData["data_year"] = data_year;
+            ViewData["value"] = value;
             return View(dbContext.Datums.Where(d => d.ID == id));
         }
 
         public IActionResult Update(int ID, int value)
         {
+            
             var datum = dbContext.Datums.SingleOrDefault(d => d.ID == ID);
             datum.value = value;
 
             dbContext.Datums.Update(datum);
             dbContext.SaveChanges();
 
-            return View("Edit", dbContext.Datums.Where(d => d.ID == ID));
+            return View("UpdateConfirm", dbContext.Datums.Where(d => d.ID == ID));
         }
 
         public IActionResult Delete(string key, int data_year, int value)
@@ -110,9 +100,7 @@ namespace DIS_Assignment4.Controllers
             Datum deletion = dbContext.Datums
                 .Where(d => d.key == key & d.data_year == data_year & d.value == value)
                 .First();
-            //_context.AnnualEnergyConsumption.Remove(DelRecord);
-            //await _context.SaveChangesAsync();
-            //return View(DelRecord);
+            
             dbContext.Datums.Remove(deletion);
             dbContext.SaveChanges();
             return View();

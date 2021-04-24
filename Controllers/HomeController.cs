@@ -217,11 +217,6 @@ namespace DIS_Assignment4.Controllers
         //}
 
 
-        public IActionResult States()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
