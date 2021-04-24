@@ -5,6 +5,7 @@ body {
     padding-bottom: 20px;
     background-color: #faebd7;
     height: 100%;
+    position: center;
 }
 
 /* Wrapping element */
@@ -91,6 +92,12 @@ p {
 }
 
 
+.detailHeading{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    
+}
 /*the gang*/
 .david {
     position: absolute;

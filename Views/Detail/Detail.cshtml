@@ -3,32 +3,46 @@
 }
 
 <h2>@ViewData["Title"]</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<h3>Here is the list of each race the NIBRS keeps statistics for</h3>
-<h4>Click "Details" to get a more in depth look at the years number of arrests</h4>
-<br />
 
-@model IEnumerable<DIS_Assignment4.Models.Key>
-    <table>
-        <tr>
-            <td><b>Race Name</b></td>
-            <td><b>Race Detail</b></td>
-        </tr>
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+</head>
+    <body>
+        <div class="detailHeading">
+            <h3 align="Center">Here is the list of each race the NIBRS keeps statistics for</h3>
+            <h4 align="Center">Click "Details" to get a more in depth look at the years number of arrests</h4>
+            <br />
+        </div>
+
+        @model IEnumerable<DIS_Assignment4.Models.Key>
+        <table align="center">
+            <tr>
+                <td><h4><b>Race Name</b></h4></td>
+                <td><h4><b>Race Detail</b></h4></td>
+            </tr>
+
             @foreach (DIS_Assignment4.Models.Key result in Model)
-            {<tr>
-    <td> @(result.key )</td>
-    <td>
-        <form asp-controller="Detail" asp-action="Details" method="post">
-            <input type="hidden" name="key" value="@result.key" />
-            <button type="submit" class="btn btn-primary btn-sm">Details</button>
-        </form>
-    </td>
-</tr>
+            {
+                <tr>
+                    <td><h4> @(result.key )</h4></td>
+                    <td>
+                        <form asp-controller="Detail" asp-action="Details" method="post">
+                            <input type="hidden" name="key" value="@result.key" />
+                            <button type="submit" class="btn btn-primary btn-sm">Details</button>
+                        </form>
+                    </td>
+                </tr>
             }
-    </table>
+        </table>
 
 
         <br />
-    
+    </body>
+</html>
 
