@@ -16,18 +16,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 </head>
 <body>
-    <h1> Bar chart example</h1>
+    <h1 align="Center">@ViewData["Key"] Arrest Graph</h1>
 
-    <canvas id="barchartexample" width="800" height="450"></canvas>
+    <canvas id="crimechart" width="800" height="450"></canvas>
 
     <script>
-    new Chart(document.getElementById("barchartexample"), {
+    new Chart(document.getElementById("crimechart"), {
       type: 'line',
       data: {
         labels: [@Html.Raw(@Model.data_year)],
         datasets: [
           {
-            label: "Population (millions)",
+            label: "Amount of Arrests)",
                 backgroundColor: 'rgba(0, 57, 42, 0.1)',
             data: [@Model.value]
           }
@@ -44,4 +44,3 @@
     </script>
 </body>
 </html>
-© 2021 GitHub, Inc.
