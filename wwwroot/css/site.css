@@ -81,6 +81,7 @@ p {
     text-align: center;
     font-size: 25px;
 }
+
 /* Position text in the middle */
 .middle {
     position: absolute;
@@ -125,13 +126,14 @@ p {
     width: 25%;
     font-size: 20px;
 }
- 
+
 .ERD {
-    bottom: 10px;
-    left: 21%;
+    top: 230%;
+    left: 23%;
     position: absolute;
     background-position: bottom;
     text-align: center;
+    padding-bottom: 30px;
 }
 
 
