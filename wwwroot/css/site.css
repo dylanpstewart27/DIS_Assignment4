@@ -125,9 +125,9 @@ p {
     width: 25%;
     font-size: 20px;
 }
-
+ 
 .ERD {
-    top: 230%;
+    bottom: 10px;
     left: 21%;
     position: absolute;
     background-position: bottom;
