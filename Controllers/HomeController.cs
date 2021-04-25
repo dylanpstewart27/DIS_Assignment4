@@ -31,7 +31,6 @@ namespace DIS_Assignment4.Controllers
             return View();
         }
 
-        //Need to put a method in here to get the data to show each different Race key
         public IActionResult Detail()
         {
             return View();
@@ -227,7 +226,7 @@ namespace DIS_Assignment4.Controllers
         
         
         
-        //David's build of chart structure
+      
 
 
        

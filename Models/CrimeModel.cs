@@ -8,13 +8,10 @@ namespace DIS_Assignment4.Models
 {
 
 
-    //public class Key
-    //{
-    //    public string keyname { get; set; }
-    //}
+   
     public class Key
     {
-        //public int ID { get; set; }
+        
         [Key]public string key { get; set; }
         public List<Datum> Data { get; set; }
     }
