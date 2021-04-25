@@ -145,14 +145,20 @@ namespace DIS_Assignment4.Controllers
             dbContext.Years.Add(year27);
             dbContext.Years.Add(year28);
             dbContext.Years.Add(year29);
-            //dbContext.SaveChanges();
+            dbContext.SaveChanges();
             dbContext.Keys.Add(Key1);
             dbContext.Keys.Add(Key2);
             dbContext.Keys.Add(Key3);
             dbContext.Keys.Add(Key4);
             dbContext.Keys.Add(Key5);
             dbContext.Keys.Add(Key6);
-            //dbContext.SaveChanges();
+            dbContext.SaveChanges();
+
+            return View();
+        }
+
+        public IActionResult PopulateDatum()
+        {
 
             httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Accept.Clear();
@@ -182,15 +188,15 @@ namespace DIS_Assignment4.Controllers
 
                     results = JsonConvert.DeserializeObject<Root>(CrimeData);
                     //Database 
-                   
+
                 }
                 foreach (Datum x in results.data)
                 {
 
-                    //if (dbContext.Datums.Where(d => d.data_year.Equals(x.data_year)).Count() == 0 & dbContext.Datums.Where(d => d.key.Equals(x.key)).Count() == 0)
-                    //{
+                    if (dbContext.Datums.Where(d => d.data_year.Equals(x.data_year)).Count() == 0 & dbContext.Datums.Where(d => d.key.Equals(x.key)).Count() == 0)
+                    {
                     dbContext.Datums.Add(x);
-                    //}
+                    }
 
                 }
 
@@ -203,18 +209,13 @@ namespace DIS_Assignment4.Controllers
                 Console.WriteLine(e.Message);
             }
 
-           
+
 
             return View(results);
         }
 
-        //public IActionResult Populate()
-        //{
+            
         
-        //    //dbContext.SaveChanges();
-
-        //    return View();
-        //}
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
